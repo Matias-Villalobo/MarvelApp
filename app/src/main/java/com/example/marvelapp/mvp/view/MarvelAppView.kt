@@ -7,7 +7,7 @@ import com.example.marvelapp.mvp.contract.MarvelAppContract
 import com.example.marvelapp.databinding.ActivityMainBinding
 import com.example.marvelapp.data.service.entity.CharacterEntity
 
-class MarvelAppView(activity: Activity, private var binding: ActivityMainBinding) :
+class MarvelAppView(activity: Activity, private val binding: ActivityMainBinding) :
         ActivityView(activity), MarvelAppContract.MarvelAppView {
     override fun showData(data: List<CharacterEntity>) {
         Toast.makeText(context, R.string.conection_established, Toast.LENGTH_SHORT).show()

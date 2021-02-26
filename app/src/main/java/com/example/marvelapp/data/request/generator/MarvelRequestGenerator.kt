@@ -1,5 +1,8 @@
 package com.example.marvelapp.data.request.generator
 
+import com.example.marvelapp.BuildConfig.BASE_URL
+import com.example.marvelapp.BuildConfig.PUBLIC_API_KEY_VALUE
+import com.example.marvelapp.BuildConfig.PRIVATE_API_HASH_VALUE
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -27,10 +30,7 @@ class MarvelRequestGenerator {
     }
 
     companion object {
-        private const val BASE_URL = "http://gateway.marvel.com/v1/public/"
-        private const val PUBLIC_API_KEY_VALUE = "e6f692f1ab44e78947a2d66faf1dd97d"
         private const val PRIVATE_API_KEY_ARG = "hash"
-        private const val PRIVATE_API_HASH_VALUE = "0ade61f277ba6a952fe85b3fc2b89322"
         private const val PUBLIC_API_KEY_ARG = "apikey"
         private const val TS = "ts"
         private const val TS_VALUE = "1"

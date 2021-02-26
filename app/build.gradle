@@ -16,7 +16,10 @@ android {
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
-
+        buildConfigField "String", "PRIVATE_API_KEY_VALUE", '"e5b51cb90bdce79107173ca1f14659d33f30bf48"'
+        buildConfigField "String", "PUBLIC_API_KEY_VALUE", '"e6f692f1ab44e78947a2d66faf1dd97d"'
+        buildConfigField "String", "BASE_URL", '"http://gateway.marvel.com/v1/public/"'
+        buildConfigField "String", "PRIVATE_API_HASH_VALUE", '"0ade61f277ba6a952fe85b3fc2b89322"'
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
