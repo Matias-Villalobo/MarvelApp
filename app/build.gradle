@@ -6,6 +6,9 @@ plugins {
 android {
     compileSdkVersion 30
     buildToolsVersion "30.0.2"
+    viewBinding {
+        enabled = true
+    }
 
     defaultConfig {
         applicationId "com.example.marvelapp"
@@ -13,7 +16,10 @@ android {
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
-
+        buildConfigField "String", "PRIVATE_API_KEY_VALUE", '"e5b51cb90bdce79107173ca1f14659d33f30bf48"'
+        buildConfigField "String", "PUBLIC_API_KEY_VALUE", '"e6f692f1ab44e78947a2d66faf1dd97d"'
+        buildConfigField "String", "BASE_URL", '"http://gateway.marvel.com/v1/public/"'
+        buildConfigField "String", "PRIVATE_API_HASH_VALUE", '"0ade61f277ba6a952fe85b3fc2b89322"'
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -39,7 +45,13 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.2.0'
     implementation 'com.google.android.material:material:1.3.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    // Test
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+    // Retrofit
+    implementation 'com.squareup.retrofit2:retrofit:2.3.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.3.0'
+    // RX
+    implementation 'io.reactivex.rxjava3:rxandroid:3.0.0'
 }
