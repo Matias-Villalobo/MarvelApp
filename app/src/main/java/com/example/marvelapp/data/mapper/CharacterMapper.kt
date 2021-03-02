@@ -1,13 +1,12 @@
-package com.example.marvelapp.data.service.mapper
+package com.example.marvelapp.data.mapper
 
-import androidx.lifecycle.Transformations.map
-import com.example.marvelapp.data.service.entity.CharacterEntity
-import com.example.marvelapp.data.service.entity.UrlsEntity
-import com.example.marvelapp.data.service.entity.ThumbnailEntity
-import com.example.marvelapp.data.service.entity.ComicsEntity
-import com.example.marvelapp.data.service.entity.EventsEntity
-import com.example.marvelapp.data.service.entity.SeriesEntity
-import com.example.marvelapp.data.service.entity.StoriesEntity
+import com.example.marvelapp.domain.entity.CharacterEntity
+import com.example.marvelapp.domain.entity.UrlsEntity
+import com.example.marvelapp.domain.entity.ThumbnailEntity
+import com.example.marvelapp.domain.entity.ComicsEntity
+import com.example.marvelapp.domain.entity.EventsEntity
+import com.example.marvelapp.domain.entity.SeriesEntity
+import com.example.marvelapp.domain.entity.StoriesEntity
 import com.example.marvelapp.data.service.response.CharacterResponse
 import com.example.marvelapp.data.service.response.UrlResponse
 import com.example.marvelapp.data.service.response.ThumbnailResponse

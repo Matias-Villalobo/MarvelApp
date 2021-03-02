@@ -1,4 +1,4 @@
-package com.example.marvelapp.mvp.view
+package com.example.marvelapp.presentation.mvp.view
 
 import android.app.Activity
 import android.content.Context

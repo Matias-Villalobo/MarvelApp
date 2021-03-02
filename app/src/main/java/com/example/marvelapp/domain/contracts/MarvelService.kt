@@ -1,6 +1,6 @@
-package com.example.marvelapp.data.service
+package com.example.marvelapp.domain.contracts
 
-import com.example.marvelapp.data.service.entity.CharacterEntity
+import com.example.marvelapp.domain.entity.CharacterEntity
 import io.reactivex.rxjava3.core.Observable
 
 interface MarvelService {
