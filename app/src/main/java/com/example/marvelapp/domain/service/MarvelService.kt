@@ -1,4 +1,4 @@
-package com.example.marvelapp.domain.contracts
+package com.example.marvelapp.domain.service
 
 import com.example.marvelapp.domain.entity.CharacterEntity
 import io.reactivex.rxjava3.core.Observable

@@ -17,11 +17,10 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        val getCharacterUseCase = GetCharactersUseCaseImpl(MarvelServiceImpl())
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        presenter = MarvelAppPresenter(MarvelAppModel(getCharacterUseCase), MarvelAppView(this, binding))
+        presenter = MarvelAppPresenter(MarvelAppModel(GetCharactersUseCaseImpl(MarvelServiceImpl())), MarvelAppView(this, binding))
         presenter.getHeroes()
     }
 }
