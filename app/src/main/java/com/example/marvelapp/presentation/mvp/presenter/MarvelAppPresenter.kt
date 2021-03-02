@@ -1,6 +1,6 @@
-package com.example.marvelapp.mvp.presenter
+package com.example.marvelapp.presentation.mvp.presenter
 
-import com.example.marvelapp.mvp.contract.MarvelAppContract
+import com.example.marvelapp.presentation.mvp.contract.MarvelAppContract
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.schedulers.Schedulers
 

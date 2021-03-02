@@ -1,11 +1,11 @@
-package com.example.marvelapp.mvp.view
+package com.example.marvelapp.presentation.mvp.view
 
 import android.app.Activity
 import android.widget.Toast
 import com.example.marvelapp.R
-import com.example.marvelapp.mvp.contract.MarvelAppContract
+import com.example.marvelapp.presentation.mvp.contract.MarvelAppContract
 import com.example.marvelapp.databinding.ActivityMainBinding
-import com.example.marvelapp.data.service.entity.CharacterEntity
+import com.example.marvelapp.domain.entity.CharacterEntity
 
 class MarvelAppView(activity: Activity, private val binding: ActivityMainBinding) :
         ActivityView(activity), MarvelAppContract.MarvelAppView {
