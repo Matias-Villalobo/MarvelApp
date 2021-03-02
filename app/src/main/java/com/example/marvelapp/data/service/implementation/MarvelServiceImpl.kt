@@ -1,4 +1,4 @@
-package com.example.marvelapp.data.serviceImpl
+package com.example.marvelapp.data.service.implementation
 
 import com.example.marvelapp.data.request.generator.MarvelRequestGenerator
 import com.example.marvelapp.data.service.api.MarvelApi

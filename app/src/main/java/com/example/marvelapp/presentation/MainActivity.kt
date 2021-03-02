@@ -2,10 +2,9 @@ package com.example.marvelapp.presentation
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.marvelapp.data.serviceImpl.MarvelServiceImpl
+import com.example.marvelapp.data.service.implementation.MarvelServiceImpl
 import com.example.marvelapp.databinding.ActivityMainBinding
-import com.example.marvelapp.domain.usecases.GetCharacterUseCase
-import com.example.marvelapp.domain.usecases.GetCharactersUseCaseImpl
+import com.example.marvelapp.domain.usecase.GetCharactersUseCaseImpl
 import com.example.marvelapp.presentation.mvp.contract.MarvelAppContract
 import com.example.marvelapp.presentation.mvp.model.MarvelAppModel
 import com.example.marvelapp.presentation.mvp.presenter.MarvelAppPresenter

@@ -1,4 +1,4 @@
-package com.example.marvelapp.domain.usecases
+package com.example.marvelapp.domain.usecase
 
 import com.example.marvelapp.domain.service.MarvelService
 import com.example.marvelapp.domain.entity.CharacterEntity

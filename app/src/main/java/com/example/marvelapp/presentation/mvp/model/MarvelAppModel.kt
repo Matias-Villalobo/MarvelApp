@@ -1,7 +1,7 @@
 package com.example.marvelapp.presentation.mvp.model
 
 import com.example.marvelapp.domain.entity.CharacterEntity
-import com.example.marvelapp.domain.usecases.GetCharacterUseCase
+import com.example.marvelapp.domain.usecase.GetCharacterUseCase
 import com.example.marvelapp.presentation.mvp.contract.MarvelAppContract
 import io.reactivex.rxjava3.core.Observable
 
