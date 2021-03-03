@@ -28,7 +28,7 @@ class CharacterAdapter(private val character: List<CharacterEntity>) :
 
         fun bind(characterItem: CharacterEntity) {
             binding.apply {
-                tvItem.text = characterItem.name
+                heroName.text = characterItem.name
                 Glide.with(itemView.context)
                     .load("${characterItem.thumbnail.path}.${characterItem.thumbnail.extension}")
                     .into(imageThumbnail)
