@@ -16,5 +16,7 @@ interface MarvelAppContract {
     interface MarvelAppView {
         fun showData(data:List<CharacterEntity>)
         fun showError()
+        fun showLoading()
+        fun hideLoading()
     }
 }
