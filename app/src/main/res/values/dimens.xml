@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="loading_bar_text_height">100dp</dimen>
+    <dimen name="default_margin">16dp</dimen>
+    <dimen name="super_hero_row_gradient_height">100dp</dimen>
+    <dimen name="super_hero_row_height">200dp</dimen>
+    <dimen name="super_hero_card_height">200dp</dimen>
+    <dimen name="padding_small_8">8dp</dimen>
+    <dimen name="padding_small_4">4dp</dimen>
+    <dimen name="title_text_size">30sp</dimen>
+    <dimen name="body_text_size">16sp</dimen>
+    <dimen name="bullet_text_size">20sp</dimen>
+    <dimen name="image_height_size">50dp</dimen>
+</resources>

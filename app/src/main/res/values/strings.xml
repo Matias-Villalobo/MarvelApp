@@ -2,4 +2,10 @@
     <string name="app_name">MarvelApp</string>
     <string name="conection_established">"The conection with the server has been established"</string>
     <string name="conection_not_established">"Can not conect with the server"</string>
+    <string name="character_image">Character Image</string>
+    <string name="description">Description</string>
+    <string name="appearances_label">Number of appearances in comics</string>
+    <string name="more_details_label">More details</string>
+    <string name="see_the_comics_label">See the comics!</string>
+
 </resources>
