@@ -9,7 +9,6 @@ import com.example.marvelapp.R
 import com.example.marvelapp.databinding.CharacterCardLayoutBinding
 import com.example.marvelapp.domain.entity.CharacterEntity
 
-
 class CharacterAdapter(private val character: List<CharacterEntity>) :
     RecyclerView.Adapter<CharacterAdapter.ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) =
