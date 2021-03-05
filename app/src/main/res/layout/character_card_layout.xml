@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/cardview_character_frag"
     android:layout_width="match_parent"
     android:layout_height="@dimen/super_hero_card_height">
 
@@ -9,10 +10,10 @@
 
         <ImageView
             android:id="@+id/image_thumbnail"
-            android:scaleType="centerCrop"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/red" />
+            android:background="@color/red"
+            android:scaleType="centerCrop" />
 
         <View
             android:layout_width="match_parent"

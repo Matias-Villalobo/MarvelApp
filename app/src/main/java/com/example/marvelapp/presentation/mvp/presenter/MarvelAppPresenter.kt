@@ -9,7 +9,7 @@ class MarvelAppPresenter(
     private val view: MarvelAppContract.MarvelAppView
 ) : MarvelAppContract.MarvelAppPresenter {
 
-    override fun getHeroes() {
+    override fun fetchHeroes() {
         view.showLoading()
         model.getHeroesData()
             .subscribeOn(Schedulers.io())
@@ -23,6 +23,10 @@ class MarvelAppPresenter(
                     view.showError()
                     view.hideLoading()
                 })
+    }
+
+    override fun onCharacterClicked(characterId: Int) {
+        view.showCharacterInfo()
     }
 
 }

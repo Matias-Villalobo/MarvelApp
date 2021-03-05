@@ -6,6 +6,11 @@
         <item name="android:indeterminateTint">@color/black</item>
     </style>
 
+    <style name="LinearStyle">
+        <item name="android:paddingStart">@dimen/linear_padding_start</item>
+        <item name="android:paddingEnd">@dimen/linear_padding_end</item>
+    </style>
+
     <style name="Title">
         <item name="android:textSize">@dimen/title_text_size</item>
         <item name="android:textColor">@color/red</item>
