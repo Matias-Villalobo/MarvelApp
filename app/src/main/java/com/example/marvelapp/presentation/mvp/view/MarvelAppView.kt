@@ -36,9 +36,6 @@ class MarvelAppView(activity: Activity, private val binding: ActivityMainBinding
 
     override fun showCharacterInfo() {
         MarvelDetailsFragment.newInstance()
-            .show(
-                (context as FragmentActivity).supportFragmentManager,
-                TAG
-            )
+            .show((context as FragmentActivity).supportFragmentManager, TAG)
     }
 }

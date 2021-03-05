@@ -7,7 +7,6 @@ import io.reactivex.rxjava3.core.Observable
 interface MarvelAppContract {
 
     interface MarvelAppModel {
-        var charactersList: List<CharacterEntity>
         fun getHeroesData(): Observable<List<CharacterEntity>>
     }
 

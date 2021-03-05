@@ -9,10 +9,6 @@ import com.example.marvelapp.R
 import com.example.marvelapp.databinding.CharacterCardLayoutBinding
 import com.example.marvelapp.domain.entity.CharacterEntity
 
-interface ItemClicked {
-    fun characterClicked(characterId: Int)
-}
-
 class CharacterAdapter(
     private val character: List<CharacterEntity>,
     private val itemClickedListener: ItemClicked
@@ -42,10 +38,7 @@ class CharacterAdapter(
                 Glide.with(itemView.context)
                     .load("${characterItem.thumbnail.path}.${characterItem.thumbnail.extension}")
                     .into(imageThumbnail)
-                cardviewCharacterFrag.setOnClickListener {
-                    itemClickedListener.characterClicked(
-                        characterItem.id
-                    )
+                cardviewCharacterFrag.setOnClickListener { itemClickedListener.characterClicked(characterItem.id)
                 }
             }
         }

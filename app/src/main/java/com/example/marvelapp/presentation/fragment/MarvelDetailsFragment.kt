@@ -25,14 +25,10 @@ class MarvelDetailsFragment : DialogFragment() {
     }
 
     companion object {
-
         const val TAG: String = "marvelItemFragment"
         fun newInstance(
-
         ): MarvelDetailsFragment {
-            val args = Bundle()
             val fragment = MarvelDetailsFragment()
-            fragment.arguments = args
             return fragment
         }
     }
