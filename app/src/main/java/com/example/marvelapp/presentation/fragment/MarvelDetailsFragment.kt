@@ -19,11 +19,6 @@ class MarvelDetailsFragment : DialogFragment() {
         return binding.root
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
-    }
-
     companion object {
         const val TAG: String = "marvelItemFragment"
         fun newInstance(
