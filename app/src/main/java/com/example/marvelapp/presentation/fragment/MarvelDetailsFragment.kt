@@ -21,11 +21,21 @@ class MarvelDetailsFragment : DialogFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+//ESTO ES UNA PRUEBA
+
 
     }
 
     companion object {
-        const val TAG: String = "marvelItemFragment"
+        const val TAG: String = "MARVELITEMFRAGMENT"
+        const val NAME_TAG = "NAME"
+        const val DESCRIPTION_TAG = "DESCRIPTION"
+        const val IMAGE_TAG = "IMAGE"
+        const val TOTAL_COMICS_TAG = "TOTAL_COMICS"
+        const val COMICS_LINK_TAG = "COMICS_LINK"
+        const val URLS_TAG = "URLS_LINK"
+
+
         fun newInstance(
         ): MarvelDetailsFragment {
             val fragment = MarvelDetailsFragment()

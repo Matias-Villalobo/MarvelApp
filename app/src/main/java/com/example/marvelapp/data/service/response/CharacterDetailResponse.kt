@@ -2,7 +2,7 @@ package com.example.marvelapp.data.service.response
 
 import com.google.gson.annotations.SerializedName
 
-open class CharacterResponse(
+open class CharacterDetailResponse(
     @SerializedName("id") val id: Int,
     @SerializedName("name") val name: String,
     @SerializedName("description") val description: String,
@@ -13,4 +13,5 @@ open class CharacterResponse(
     @SerializedName("series") val series: SeriesResponse,
     @SerializedName("stories") val stories: StoriesResponse,
     @SerializedName("events") val events: EventsResponse,
+    @SerializedName("resourceURI") val resourceUri: String
 )

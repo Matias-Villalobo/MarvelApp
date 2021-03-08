@@ -1,19 +1,7 @@
 package com.example.marvelapp.data.mapper
 
-import com.example.marvelapp.domain.entity.CharacterEntity
-import com.example.marvelapp.domain.entity.UrlsEntity
-import com.example.marvelapp.domain.entity.ThumbnailEntity
-import com.example.marvelapp.domain.entity.ComicsEntity
-import com.example.marvelapp.domain.entity.EventsEntity
-import com.example.marvelapp.domain.entity.SeriesEntity
-import com.example.marvelapp.domain.entity.StoriesEntity
-import com.example.marvelapp.data.service.response.CharacterResponse
-import com.example.marvelapp.data.service.response.UrlResponse
-import com.example.marvelapp.data.service.response.ThumbnailResponse
-import com.example.marvelapp.data.service.response.ComicsResponse
-import com.example.marvelapp.data.service.response.EventsResponse
-import com.example.marvelapp.data.service.response.SeriesResponse
-import com.example.marvelapp.data.service.response.StoriesResponse
+import com.example.marvelapp.data.service.response.*
+import com.example.marvelapp.domain.entity.*
 
 object CharacterMapper {
 
@@ -29,6 +17,21 @@ object CharacterMapper {
             transformStories(characterResponse.stories),
             transformSeries(characterResponse.series),
             transformListOfUrls(characterResponse.urls)
+        )
+
+    fun transformSingleCharacter(character: CharacterDetailResponse): CharacterDetailEntity =
+        CharacterDetailEntity(
+            character.id,
+            character.name,
+            character.description,
+            character.modified,
+            transformThumbnail(character.thumbnail),
+            transformEvents(character.events),
+            transformComics(character.comics),
+            transformStories(character.stories),
+            transformSeries(character.series),
+            transformListOfUrls(character.urls),
+            character.resourceUri
         )
 
     private fun transformUrl(urlResponse: UrlResponse): UrlsEntity = UrlsEntity(
@@ -63,4 +66,6 @@ object CharacterMapper {
 
     fun transformListOfCharacters(charactersResponse: List<CharacterResponse>): List<CharacterEntity> =
         charactersResponse.map { transformCharacter(it) }
+
+
 }
