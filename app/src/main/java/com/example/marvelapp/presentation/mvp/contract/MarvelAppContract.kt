@@ -1,6 +1,7 @@
 package com.example.marvelapp.presentation.mvp.contract
 
 import com.example.marvelapp.domain.entity.CharacterEntity
+import com.example.marvelapp.presentation.adapter.ItemClicked
 import io.reactivex.rxjava3.core.Observable
 
 interface MarvelAppContract {
@@ -10,13 +11,16 @@ interface MarvelAppContract {
     }
 
     interface MarvelAppPresenter {
-        fun getHeroes()
+        fun fetchHeroes()
+        fun onCharacterClicked(characterId: Int)
+
     }
 
     interface MarvelAppView {
-        fun showData(data:List<CharacterEntity>)
+        fun showData(data: List<CharacterEntity>)
         fun showError()
         fun showLoading()
         fun hideLoading()
+        fun showCharacterInfo()
     }
 }
