@@ -15,7 +15,7 @@ class MarvelDetailPresenter(
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe(
                 { data ->
-                    val pepe = 1 //this variable only exists for the purpose of being able to test the service call. Once the view is implemented, it will be deleted
+
                 },
                 {
                 })
