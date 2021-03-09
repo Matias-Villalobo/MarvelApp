@@ -34,8 +34,8 @@ class MarvelAppView(activity: Activity, private val binding: ActivityMainBinding
         binding.loadingBar.visibility = View.GONE
     }
 
-    override fun showCharacterInfo() {
-        MarvelDetailsFragment.newInstance()
+    override fun showCharacterInfo(characterId:Int) {
+        MarvelDetailsFragment.newInstance(characterId)
             .show((context as FragmentActivity).supportFragmentManager, TAG)
     }
 }

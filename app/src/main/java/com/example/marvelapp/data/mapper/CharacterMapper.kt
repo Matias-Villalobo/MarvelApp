@@ -26,12 +26,12 @@ object CharacterMapper {
             character.description,
             character.modified,
             transformThumbnail(character.thumbnail),
-            transformEvents(character.events),
+            character.resourceUri,
             transformComics(character.comics),
+            transformEvents(character.events),
             transformStories(character.stories),
             transformSeries(character.series),
             transformListOfUrls(character.urls),
-            character.resourceUri
         )
 
     private fun transformUrl(urlResponse: UrlResponse): UrlsEntity = UrlsEntity(
@@ -50,22 +50,29 @@ object CharacterMapper {
 
     private fun transformComics(comicsResponse: ComicsResponse): ComicsEntity = ComicsEntity(
         comicsResponse.available,
+        comicsResponse.collectionURI,
+        comicsResponse.returned
     )
 
     private fun transformEvents(eventsResponse: EventsResponse): EventsEntity = EventsEntity(
         eventsResponse.available,
+        eventsResponse.collectionURI,
+        eventsResponse.returned
     )
 
     private fun transformSeries(seriesResponse: SeriesResponse): SeriesEntity = SeriesEntity(
         seriesResponse.available,
+        seriesResponse.collectionURI,
+        seriesResponse.returned
     )
 
     private fun transformStories(storiesResponse: StoriesResponse): StoriesEntity = StoriesEntity(
         storiesResponse.available,
+        storiesResponse.collectionURI,
+        storiesResponse.returned
     )
 
     fun transformListOfCharacters(charactersResponse: List<CharacterResponse>): List<CharacterEntity> =
         charactersResponse.map { transformCharacter(it) }
-
 
 }

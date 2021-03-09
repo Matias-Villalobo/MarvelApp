@@ -14,5 +14,5 @@ interface MarvelApi {
     fun getCharacter(): Call<MarvelBaseResponse<MarvelResponse<List<CharacterResponse>>>>
 
     @GET("/v1/public/characters/{characterId}")
-    fun getSingleCharacter(@Path("characterId") id: Int): Call<MarvelBaseResponse<MarvelResponse<CharacterDetailResponse>>>
+    fun getSingleCharacter(@Path("characterId") id: Int): Call<MarvelBaseResponse<MarvelResponse<List<CharacterDetailResponse>>>>
 }

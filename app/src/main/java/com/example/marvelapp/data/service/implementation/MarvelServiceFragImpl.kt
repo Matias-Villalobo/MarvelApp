@@ -18,7 +18,7 @@ class MarvelServiceFragImpl : MarvelServiceCharacterDetail {
             val response = callResponse.execute()
 
             if (response.isSuccessful) {
-                subscriber.onNext(response.body()?.data?.result?.let { transformSingleCharacter(it) })
+                subscriber.onNext(response.body()?.data?.result?.let { transformSingleCharacter(it[0])})
                 subscriber.onComplete()
             } else {
                 subscriber.onError(Throwable(response.message()))

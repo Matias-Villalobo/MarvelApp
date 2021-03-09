@@ -1,8 +1,11 @@
 package com.example.marvelapp.presentation.mvp.contract
 
+import com.example.marvelapp.domain.entity.CharacterDetailEntity
+import io.reactivex.rxjava3.core.Observable
+
 interface MarvelAppDetailContract {
     interface Model {
-        fun getDataSingleCharacter()
+        fun getDataSingleCharacter(id: Int): Observable<CharacterDetailEntity>
     }
 
     interface View {
@@ -11,6 +14,6 @@ interface MarvelAppDetailContract {
     }
 
     interface Presenter {
-        fun retrieveSingleCharacterInfo()
+        fun retrieveSingleCharacterInfo(characterId: Int)
     }
 }

@@ -8,10 +8,11 @@ open class CharacterDetailResponse(
     @SerializedName("description") val description: String,
     @SerializedName("modified") val modified: String,
     @SerializedName("thumbnail") val thumbnail: ThumbnailResponse,
+    @SerializedName("resourceURI") val resourceUri: String,
     @SerializedName("comics") val comics: ComicsResponse,
     @SerializedName("urls") val urls: List<UrlResponse>,
     @SerializedName("series") val series: SeriesResponse,
     @SerializedName("stories") val stories: StoriesResponse,
     @SerializedName("events") val events: EventsResponse,
-    @SerializedName("resourceURI") val resourceUri: String
+
 )

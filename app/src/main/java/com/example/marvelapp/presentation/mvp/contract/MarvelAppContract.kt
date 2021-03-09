@@ -13,7 +13,6 @@ interface MarvelAppContract {
     interface MarvelAppPresenter {
         fun fetchHeroes()
         fun onCharacterClicked(characterId: Int)
-
     }
 
     interface MarvelAppView {
@@ -21,6 +20,6 @@ interface MarvelAppContract {
         fun showError()
         fun showLoading()
         fun hideLoading()
-        fun showCharacterInfo()
+        fun showCharacterInfo(characterId: Int)
     }
 }
