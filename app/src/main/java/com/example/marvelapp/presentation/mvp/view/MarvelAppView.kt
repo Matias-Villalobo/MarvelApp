@@ -23,7 +23,7 @@ class MarvelAppView(activity: Activity, private val binding: ActivityMainBinding
     }
 
     override fun showError() {
-        Toast.makeText(context, R.string.conection_not_established, Toast.LENGTH_SHORT).show()
+        Toast.makeText(context, R.string.connection_not_established, Toast.LENGTH_SHORT).show()
     }
 
     override fun showLoading() {
@@ -34,8 +34,8 @@ class MarvelAppView(activity: Activity, private val binding: ActivityMainBinding
         binding.loadingBar.visibility = View.GONE
     }
 
-    override fun showCharacterInfo() {
-        MarvelDetailsFragment.newInstance()
+    override fun showCharacterInfo(characterId:Int) {
+        MarvelDetailsFragment.newInstance(characterId)
             .show((context as FragmentActivity).supportFragmentManager, TAG)
     }
 }

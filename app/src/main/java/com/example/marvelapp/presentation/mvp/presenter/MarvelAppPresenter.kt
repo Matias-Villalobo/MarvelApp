@@ -26,7 +26,7 @@ class MarvelAppPresenter(
     }
 
     override fun onCharacterClicked(characterId: Int) {
-        view.showCharacterInfo()
+        view.showCharacterInfo(characterId)
     }
 
 }

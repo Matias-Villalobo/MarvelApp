@@ -10,5 +10,4 @@ class MarvelAppModel(private val getCharacterUseCases: GetCharacterUseCase) :
 
     override fun getHeroesData(): Observable<List<CharacterEntity>> =
         getCharacterUseCases.call()
-
 }
