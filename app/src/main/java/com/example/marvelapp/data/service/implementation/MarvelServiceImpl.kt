@@ -32,7 +32,6 @@ class MarvelServiceImpl : MarvelService {
             val callResponse = api.createService(MarvelApi::class.java).getSingleCharacter(id)
             val response = callResponse.execute()
 
-
             if (response.isSuccessful) {
                 val validResponse = response.body()?.data?.result
                 validResponse?.let {
