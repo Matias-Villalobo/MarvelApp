@@ -1,7 +1,21 @@
 package com.example.marvelapp.data.mapper
 
-import com.example.marvelapp.data.service.response.*
-import com.example.marvelapp.domain.entity.*
+import com.example.marvelapp.data.service.response.CharacterDetailResponse
+import com.example.marvelapp.data.service.response.CharacterResponse
+import com.example.marvelapp.data.service.response.ComicsResponse
+import com.example.marvelapp.data.service.response.EventsResponse
+import com.example.marvelapp.data.service.response.SeriesResponse
+import com.example.marvelapp.data.service.response.StoriesResponse
+import com.example.marvelapp.data.service.response.ThumbnailResponse
+import com.example.marvelapp.data.service.response.UrlResponse
+import com.example.marvelapp.domain.entity.CharacterDetailEntity
+import com.example.marvelapp.domain.entity.CharacterEntity
+import com.example.marvelapp.domain.entity.ComicsEntity
+import com.example.marvelapp.domain.entity.EventsEntity
+import com.example.marvelapp.domain.entity.SeriesEntity
+import com.example.marvelapp.domain.entity.StoriesEntity
+import com.example.marvelapp.domain.entity.ThumbnailEntity
+import com.example.marvelapp.domain.entity.UrlsEntity
 
 object CharacterMapper {
 

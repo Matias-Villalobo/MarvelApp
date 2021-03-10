@@ -15,9 +15,9 @@ class MarvelDetailPresenter(
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe(
                 { data ->
-
+                    //At the moment the view has not yet been implemented, in the future here will be the respective methods of displaying the data
                 },
-                {
+                { //At the moment the view has not yet been implemented, in the future here will be the respective methods of displaying the errors
                 })
     }
 }

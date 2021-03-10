@@ -18,6 +18,6 @@ class MarvelDetailView(
     }
 
     override fun showFragmentError() {
-        Toast.makeText(context, R.string.conection_not_established, Toast.LENGTH_SHORT).show()
+        Toast.makeText(context, R.string.connection_not_established, Toast.LENGTH_SHORT).show()
     }
 }

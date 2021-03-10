@@ -11,6 +11,6 @@ class CharacterDetailEntity(
     val events: EventsEntity,
     val stories: StoriesEntity,
     val series: SeriesEntity,
-    val urls: List<UrlsEntity>,
+    val urls: List<UrlsEntity>
 
     )

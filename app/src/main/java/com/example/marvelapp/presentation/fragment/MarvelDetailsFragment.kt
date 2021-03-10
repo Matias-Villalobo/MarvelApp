@@ -5,7 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
-import com.example.marvelapp.data.service.implementation.MarvelServiceFragImpl
+import com.example.marvelapp.data.service.implementation.MarvelServiceImpl
 import com.example.marvelapp.databinding.CharacterDetailLayoutBinding
 import com.example.marvelapp.domain.usecase.GetSingleCharacterUseCaseImpl
 import com.example.marvelapp.presentation.mvp.contract.MarvelAppDetailContract
@@ -31,7 +31,7 @@ class MarvelDetailsFragment : DialogFragment() {
         super.onViewCreated(view, savedInstanceState)
         presenter = MarvelDetailPresenter(
             MarvelDetailModel(
-                GetSingleCharacterUseCaseImpl(MarvelServiceFragImpl())
+                GetSingleCharacterUseCaseImpl(MarvelServiceImpl())
             ), MarvelDetailView(this, binding)
         )
         presenter.retrieveSingleCharacterInfo(
