@@ -9,7 +9,7 @@ interface MarvelAppDetailContract {
     }
 
     interface View {
-        fun showFragmentData()
+        fun showFragmentData(data: CharacterDetailEntity)
         fun showFragmentError()
     }
 

@@ -1,76 +1,102 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constraint"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:layout_height="match_parent">
 
     <ImageView
         android:id="@+id/button_close"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@android:drawable/ic_delete" />
 
-    <TextView
-        android:id="@+id/character_details_link"
-        style="@style/Body"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-
-    <TextView
-        android:id="@+id/character_appearances_comics"
-        style="@style/Body"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-
     <ImageView
-        android:id="@+id/dialog_character_image"
-        android:layout_width="wrap_content"
+        android:id="@+id/character_image"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:layout_marginTop="@dimen/padding_small_8"
         android:contentDescription="@string/character_image"
-        android:padding="@dimen/padding_small_8" />
-
-    <TextView
-        style="@style/Letters"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/see_the_comics_label" />
-
-    <TextView
-        android:id="@+id/character_description"
-        style="@style/Body"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-
-    <TextView
-        style="@style/Letters"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/more_details_label" />
+        app:layout_constraintTop_toBottomOf="@id/button_close" />
 
     <TextView
         android:id="@+id/character_name"
         style="@style/Title"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/character_image" />
+
+    <TextView
+        android:id="@+id/character_description_title"
+        style="@style/Letters"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/description"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/character_name" />
+
+    <TextView
+        android:id="@+id/character_description"
+        style="@style/Body"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/character_description_title" />
+
+    <TextView
+        android:id="@+id/more_details_title"
+        style="@style/Letters"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/more_details_label"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/character_description" />
+
+    <TextView
+        android:id="@+id/character_details_link"
+        style="@style/Body"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/more_details_title" />
+
+    <TextView
+        android:id="@+id/character_appearances_title"
+        style="@style/Letters"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/appearances_label"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/character_details_link" />
+
+    <TextView
+        android:id="@+id/character_appearances_comics"
+        style="@style/Body"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="@id/character_details_link"
+        app:layout_constraintTop_toBottomOf="@id/character_appearances_title" />
+
+    <TextView
+        android:id="@+id/character_comics"
+        style="@style/Letters"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/see_the_comics_label"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/character_appearances_comics" />
 
     <TextView
         android:id="@+id/character_comics_link"
         style="@style/Body"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-
-    <TextView
-        style="@style/Letters"
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/description" />
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/character_comics" />
 
-    <TextView
-        style="@style/Letters"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/appearances_label" />
-
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
