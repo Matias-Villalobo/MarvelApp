@@ -6,6 +6,18 @@
         <item name="android:indeterminateTint">@color/black</item>
     </style>
 
+    <style name="ImageStyle">
+        <item name="android:layout_height">@dimen/character_image_height_size</item>
+        <item name="android:layout_width">@dimen/character_image_width_size</item>
+        <item name="android:layout_marginTop">@dimen/character_image_margin_top</item>
+    </style>
+
+    <style name="FragmentLoadingBarStyle">
+        <item name="android:indeterminateTint">@color/red</item>
+        <item name="android:layout_width">@dimen/loading_bar_width</item>
+        <item name="android:layout_height">@dimen/loading_bar_height</item>
+    </style>
+
     <style name="LinearStyle">
         <item name="android:paddingStart">@dimen/linear_padding_start</item>
         <item name="android:paddingEnd">@dimen/linear_padding_end</item>
