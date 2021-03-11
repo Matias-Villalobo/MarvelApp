@@ -6,10 +6,6 @@
         <item name="android:indeterminateTint">@color/black</item>
     </style>
 
-    <style name="FragmentLoadingBarStyle">
-        <item name="android:indeterminateTint">@color/red</item>
-    </style>
-
     <style name="LinearStyle">
         <item name="android:paddingStart">@dimen/linear_padding_start</item>
         <item name="android:paddingEnd">@dimen/linear_padding_end</item>
