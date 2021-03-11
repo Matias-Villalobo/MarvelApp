@@ -41,19 +41,19 @@ class MarvelDetailView(
 
     override fun showLoading() {
         binding.loadingBar.isVisible = true
-        binding.characterDescriptionTitle.visibility = View.INVISIBLE
-        binding.moreDetailsTitle.visibility = View.INVISIBLE
-        binding.characterAppearancesTitle.visibility = View.INVISIBLE
-        binding.characterComics.visibility = View.INVISIBLE
-        binding.characterImage.visibility = View.INVISIBLE
+        binding.characterDescriptionTitle.isVisible = false
+        binding.moreDetailsTitle.isVisible = false
+        binding.characterAppearancesTitle.isVisible = false
+        binding.characterComics.isVisible = false
+        binding.characterImage.isVisible = false
     }
 
     override fun hideLoading() {
         binding.loadingBar.isVisible = false
-        binding.characterDescriptionTitle.visibility = View.VISIBLE
-        binding.moreDetailsTitle.visibility = View.VISIBLE
-        binding.characterAppearancesTitle.visibility = View.VISIBLE
-        binding.characterComics.visibility = View.VISIBLE
-        binding.characterImage.visibility = View.VISIBLE
+        binding.characterDescriptionTitle.isVisible = true
+        binding.moreDetailsTitle.isVisible = true
+        binding.characterAppearancesTitle.isVisible = true
+        binding.characterComics.isVisible = true
+        binding.characterImage.isVisible = true
     }
 }

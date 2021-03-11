@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/light_red">
 
+
     <TextView
         android:id="@+id/character_name"
         style="@style/Title"
@@ -16,8 +17,8 @@
 
     <ImageView
         android:id="@+id/character_image"
-        android:layout_width="0dp"
-        android:layout_height="100dp"
+        android:layout_width="@dimen/character_image_width_size"
+        android:layout_height="@dimen/character_image_height_size"
         android:layout_marginTop="@dimen/character_image_margin_top"
         app:layout_constraintBottom_toTopOf="@id/character_name"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -93,8 +94,8 @@
 
     <ProgressBar
         android:id="@+id/loading_bar"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="@dimen/loading_bar_widt"
+        android:layout_height="@dimen/loading_bar_height"
         android:indeterminateTint="@color/red"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
