@@ -11,6 +11,8 @@ interface MarvelAppDetailContract {
     interface View {
         fun showFragmentData(data: CharacterDetailEntity)
         fun showFragmentError()
+        fun showLoading()
+        fun hideLoading()
     }
 
     interface Presenter {

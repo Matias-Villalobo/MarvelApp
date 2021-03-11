@@ -10,14 +10,17 @@ class MarvelDetailPresenter(
 ) : MarvelAppDetailContract.Presenter {
 
     override fun retrieveSingleCharacterInfo(characterId: Int) {
+        view.showLoading()
         model.getDataSingleCharacter(characterId)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe(
                 { data ->
                     view.showFragmentData(data)
+                    view.hideLoading()
                 },
                 { view.showFragmentError()
+                    view.hideLoading()
                 })
     }
 }
