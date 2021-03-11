@@ -4,6 +4,7 @@ import android.app.Activity
 import android.content.Context
 import android.view.View
 import android.widget.Toast
+import androidx.core.view.isVisible
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.FragmentActivity
 import com.bumptech.glide.Glide
@@ -39,7 +40,7 @@ class MarvelDetailView(
     }
 
     override fun showLoading() {
-        binding.loadingBar.visibility = View.VISIBLE
+        binding.loadingBar.isVisible = true
         binding.characterDescriptionTitle.visibility = View.INVISIBLE
         binding.moreDetailsTitle.visibility = View.INVISIBLE
         binding.characterAppearancesTitle.visibility = View.INVISIBLE
@@ -48,7 +49,7 @@ class MarvelDetailView(
     }
 
     override fun hideLoading() {
-        binding.loadingBar.visibility = View.GONE
+        binding.loadingBar.isVisible = false
         binding.characterDescriptionTitle.visibility = View.VISIBLE
         binding.moreDetailsTitle.visibility = View.VISIBLE
         binding.characterAppearancesTitle.visibility = View.VISIBLE
