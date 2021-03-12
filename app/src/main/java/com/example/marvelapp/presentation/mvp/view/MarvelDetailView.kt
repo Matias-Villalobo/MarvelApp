@@ -4,6 +4,7 @@ import android.app.Activity
 import android.content.Context
 import android.view.View
 import android.widget.Toast
+import androidx.core.view.isInvisible
 import androidx.core.view.isVisible
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.FragmentActivity
@@ -40,20 +41,20 @@ class MarvelDetailView(
     }
 
     override fun showLoading() {
-        binding.loadingBar.isVisible = true
-        binding.characterDescriptionTitle.isVisible = false
-        binding.moreDetailsTitle.isVisible = false
-        binding.characterAppearancesTitle.isVisible = false
-        binding.characterComics.isVisible = false
-        binding.characterImage.isVisible = false
+        binding.loadingBar.isInvisible = false
+        binding.characterDescriptionTitle.isInvisible = true
+        binding.moreDetailsTitle.isInvisible = true
+        binding.characterAppearancesTitle.isInvisible = true
+        binding.characterComics.isInvisible = true
+        binding.characterImage.isInvisible = true
     }
 
     override fun hideLoading() {
-        binding.loadingBar.isVisible = false
-        binding.characterDescriptionTitle.isVisible = true
-        binding.moreDetailsTitle.isVisible = true
-        binding.characterAppearancesTitle.isVisible = true
-        binding.characterComics.isVisible = true
-        binding.characterImage.isVisible = true
+        binding.loadingBar.isInvisible = true
+        binding.characterDescriptionTitle.isInvisible = false
+        binding.moreDetailsTitle.isInvisible = false
+        binding.characterAppearancesTitle.isInvisible = false
+        binding.characterComics.isInvisible = false
+        binding.characterImage.isInvisible = false
     }
 }
