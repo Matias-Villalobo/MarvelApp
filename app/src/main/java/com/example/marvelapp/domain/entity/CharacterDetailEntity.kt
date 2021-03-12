@@ -12,5 +12,4 @@ class CharacterDetailEntity(
     val stories: StoriesEntity,
     val series: SeriesEntity,
     val urls: List<UrlsEntity>
-
-    )
+)

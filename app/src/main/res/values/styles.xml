@@ -16,16 +16,20 @@
         <item name="android:textColor">@color/red</item>
         <item name="android:layout_gravity">center</item>
         <item name="android:layout_marginTop">@dimen/padding_small_8</item>
+        <item name="android:layout_marginLeft">@dimen/title_margin_size</item>
     </style>
 
     <style name="Body">
         <item name="android:fontFamily">sans-serif-light</item>
         <item name="android:textSize">@dimen/body_text_size</item>
         <item name="android:textColor">@color/teal_700</item>
+        <item name="android:layout_margin">@dimen/title_margin_size</item>
     </style>
 
     <style name="Letters">
         <item name="android:fontFamily">sans-serif-bold</item>
         <item name="android:textSize">@dimen/bullet_text_size</item>
+        <item name="android:layout_margin">@dimen/title_margin_size</item>
+
     </style>
 </resources>
