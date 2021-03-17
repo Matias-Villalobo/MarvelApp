@@ -7,6 +7,8 @@ interface MarvelAppContract {
 
     interface MarvelAppModel {
         fun getHeroesData(): Observable<List<CharacterEntity>>
+        fun addHeroesToDataBase(data: List<CharacterEntity>)
+
     }
 
     interface MarvelAppView {

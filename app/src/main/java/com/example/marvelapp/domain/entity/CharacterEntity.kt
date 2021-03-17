@@ -6,6 +6,7 @@ data class CharacterEntity(
         val description: String,
         val modified: String,
         val thumbnail: ThumbnailEntity,
+        val resourceUri: String,
         val events: EventsEntity,
         val comics: ComicsEntity,
         val stories: StoriesEntity,
