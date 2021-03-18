@@ -1,7 +1,7 @@
 package com.example.marvelapp.data.local.model
 
-import com.example.marvelapp.data.local.model.utils.NumbersUtils.VALUE_ZERO
-import com.example.marvelapp.data.local.model.utils.StringUtils.EMPTY_STRING
+import com.example.marvelapp.data.local.model.utils.ConstantsUtils.VALUE_ZERO
+import com.example.marvelapp.data.local.model.utils.ConstantsUtils.EMPTY_STRING
 import io.realm.RealmObject
 
 open class ComicsRealmEntity(

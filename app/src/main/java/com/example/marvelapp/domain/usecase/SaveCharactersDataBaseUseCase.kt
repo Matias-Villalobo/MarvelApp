@@ -13,5 +13,4 @@ class SaveCharactersDataBaseUseCaseImpl(private val localMarvelDataBase: LocalMa
     override fun call(data: List<CharacterEntity>) {
         localMarvelDataBase.saveCharacters(data)
     }
-
 }

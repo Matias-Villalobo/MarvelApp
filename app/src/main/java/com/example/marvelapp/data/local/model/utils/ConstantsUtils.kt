@@ -1,5 +1,6 @@
 package com.example.marvelapp.data.local.model.utils
 
-object NumbersUtils {
+object ConstantsUtils {
     val VALUE_ZERO = 0
+    val EMPTY_STRING = ""
 }
