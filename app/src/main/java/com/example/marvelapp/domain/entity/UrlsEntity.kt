@@ -1,6 +1,6 @@
 package com.example.marvelapp.domain.entity
 
-class UrlsEntity (
+class UrlsEntity(
     var type: String,
     var url: String
 )

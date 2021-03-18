@@ -38,7 +38,8 @@ class CharacterAdapter(
                 Glide.with(itemView.context)
                     .load("${characterItem.thumbnail.path}.${characterItem.thumbnail.extension}")
                     .into(imageThumbnail)
-                cardviewCharacterFrag.setOnClickListener { itemClickedListener.characterClicked(characterItem.id)
+                cardviewCharacterFrag.setOnClickListener {
+                    itemClickedListener.characterClicked(characterItem.id)
                 }
             }
         }

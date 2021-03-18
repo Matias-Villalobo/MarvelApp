@@ -1,6 +1,5 @@
 package com.example.marvelapp.data.mapper
 
-import com.example.marvelapp.data.service.response.CharacterDetailResponse
 import com.example.marvelapp.data.service.response.CharacterResponse
 import com.example.marvelapp.data.service.response.ComicsResponse
 import com.example.marvelapp.data.service.response.EventsResponse
@@ -26,6 +25,7 @@ object CharacterMapper {
             characterResponse.description,
             characterResponse.modified,
             transformThumbnail(characterResponse.thumbnail),
+            characterResponse.resourceUri,
             transformEvents(characterResponse.events),
             transformComics(characterResponse.comics),
             transformStories(characterResponse.stories),
@@ -33,7 +33,7 @@ object CharacterMapper {
             transformListOfUrls(characterResponse.urls)
         )
 
-    fun transformSingleCharacter(character: CharacterDetailResponse): CharacterDetailEntity =
+    fun transformSingleCharacter(character: CharacterResponse): CharacterDetailEntity =
         CharacterDetailEntity(
             character.id,
             character.name,
@@ -45,7 +45,7 @@ object CharacterMapper {
             transformEvents(character.events),
             transformStories(character.stories),
             transformSeries(character.series),
-            transformListOfUrls(character.urls),
+            transformListOfUrls(character.urls)
         )
 
     private fun transformUrl(urlResponse: UrlResponse): UrlsEntity = UrlsEntity(
@@ -68,6 +68,12 @@ object CharacterMapper {
         comicsResponse.returned
     )
 
+    private fun transformStories(storiesResponse: StoriesResponse): StoriesEntity = StoriesEntity(
+        storiesResponse.available,
+        storiesResponse.collectionURI,
+        storiesResponse.returned
+    )
+
     private fun transformEvents(eventsResponse: EventsResponse): EventsEntity = EventsEntity(
         eventsResponse.available,
         eventsResponse.collectionURI,
@@ -80,11 +86,6 @@ object CharacterMapper {
         seriesResponse.returned
     )
 
-    private fun transformStories(storiesResponse: StoriesResponse): StoriesEntity = StoriesEntity(
-        storiesResponse.available,
-        storiesResponse.collectionURI,
-        storiesResponse.returned
-    )
 
     fun transformListOfCharacters(charactersResponse: List<CharacterResponse>): List<CharacterEntity> =
         charactersResponse.map { transformCharacter(it) }

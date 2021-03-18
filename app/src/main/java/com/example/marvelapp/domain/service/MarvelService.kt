@@ -6,5 +6,5 @@ import io.reactivex.rxjava3.core.Observable
 
 interface MarvelService {
     fun getCharacters(): Observable<List<CharacterEntity>>
-    fun getSingleCharacter(id :Int): Observable<CharacterDetailEntity>
+    fun getSingleCharacter(id: Int): Observable<CharacterDetailEntity>
 }

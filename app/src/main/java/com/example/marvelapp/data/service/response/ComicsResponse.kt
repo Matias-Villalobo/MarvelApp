@@ -5,5 +5,5 @@ import com.google.gson.annotations.SerializedName
 class ComicsResponse(
     @SerializedName("available") val available: Int,
     @SerializedName("collectionURI") val collectionURI: String,
-    @SerializedName("returned") val returned: Int,
+    @SerializedName("returned") val returned: Int
 )

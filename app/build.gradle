@@ -1,11 +1,11 @@
-plugins {
-    id 'com.android.application'
-    id 'kotlin-android'
-}
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'realm-android'
 
 android {
     compileSdkVersion 30
-    buildToolsVersion "30.0.2"
+    buildToolsVersion "30.0.3"
     viewBinding {
         enabled = true
     }
@@ -38,6 +38,18 @@ android {
     }
 }
 
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath "io.realm:realm-gradle-plugin:10.3.1"
+    }
+}
+realm {
+    syncEnabled = true;
+}
+
 dependencies {
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
@@ -58,4 +70,5 @@ dependencies {
     implementation 'com.android.support:recyclerview-v7'
     // Glide
     implementation 'com.github.bumptech.glide:glide:4.11.0'
+
 }

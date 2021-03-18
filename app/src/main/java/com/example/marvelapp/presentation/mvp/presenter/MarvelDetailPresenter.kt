@@ -19,7 +19,8 @@ class MarvelDetailPresenter(
                     view.showFragmentData(data)
                     view.hideLoading()
                 },
-                { view.showFragmentError()
+                {
+                    view.showFragmentError()
                     view.hideLoading()
                 })
     }

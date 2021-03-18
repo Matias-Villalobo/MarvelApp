@@ -16,6 +16,7 @@ class MarvelAppPresenter(
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe(
                 { data ->
+                    model.addHeroesToDataBase(data)
                     view.showData(data)
                     view.hideLoading()
                 },
