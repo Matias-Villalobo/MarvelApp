@@ -1,9 +1,11 @@
 package com.example.marvelapp.data.local.model
 
+import com.example.marvelapp.data.local.model.utils.NumbersUtils.VALUE_ZERO
+import com.example.marvelapp.data.local.model.utils.StringUtils.EMPTY_STRING
 import io.realm.RealmObject
 
 open class StoriesRealmEntity(
-    var available: Int = 0,
-    var collectionURI: String = "",
-    var returned: Int = 0
+    var available: Int = VALUE_ZERO,
+    var collectionURI: String = EMPTY_STRING,
+    var returned: Int = VALUE_ZERO
 ) : RealmObject()

@@ -8,6 +8,7 @@ class CharacterResponse(
    @SerializedName("description") val description: String,
    @SerializedName("modified") val modified: String,
    @SerializedName("thumbnail") val thumbnail: ThumbnailResponse,
+   @SerializedName("resourceURI") val resourceUri: String,
    @SerializedName("comics") val comics: ComicsResponse,
    @SerializedName("urls") val urls: List<UrlResponse>,
    @SerializedName("series") val series: SeriesResponse,

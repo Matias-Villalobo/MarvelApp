@@ -25,7 +25,7 @@ object CharacterMapper {
             characterResponse.description,
             characterResponse.modified,
             transformThumbnail(characterResponse.thumbnail),
-            characterResponse.modified,
+            characterResponse.resourceUri,
             transformEvents(characterResponse.events),
             transformComics(characterResponse.comics),
             transformStories(characterResponse.stories),
@@ -33,7 +33,7 @@ object CharacterMapper {
             transformListOfUrls(characterResponse.urls)
         )
 
-    fun transformSingleCharacter(character: com.example.marvelapp.data.service.response.CharacterEntity): CharacterDetailEntity =
+    fun transformSingleCharacter(character: CharacterResponse): CharacterDetailEntity =
         CharacterDetailEntity(
             character.id,
             character.name,

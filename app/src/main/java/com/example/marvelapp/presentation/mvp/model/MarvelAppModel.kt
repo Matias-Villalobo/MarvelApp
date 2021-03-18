@@ -17,6 +17,5 @@ class MarvelAppModel(
     override fun addHeroesToDataBase(data: List<CharacterEntity>) {
         saveCharactersDataBaseUseCase.call(data)
     }
-
-
+    
 }
