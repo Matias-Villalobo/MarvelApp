@@ -7,7 +7,8 @@ interface MarvelAppContract {
 
     interface MarvelAppModel {
         fun getHeroesData(): Observable<List<CharacterEntity>>
-        fun addHeroesToDataBase(data: List<CharacterEntity>)
+        fun addCharactersToDataBase(data: List<CharacterEntity>)
+        fun loadCharactersFromDataBase():List<CharacterEntity>
     }
 
     interface MarvelAppView {
@@ -16,10 +17,12 @@ interface MarvelAppContract {
         fun showLoading()
         fun hideLoading()
         fun showCharacterInfo(characterId: Int)
+        fun cleanRecycler()
     }
 
     interface MarvelAppPresenter {
         fun fetchHeroes()
         fun onCharacterClicked(characterId: Int)
+        fun getCharactersFromDataBase()
     }
 }

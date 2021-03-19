@@ -50,6 +50,7 @@ realm {
     syncEnabled = true;
 }
 
+
 dependencies {
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
@@ -70,5 +71,7 @@ dependencies {
     implementation 'com.android.support:recyclerview-v7'
     // Glide
     implementation 'com.github.bumptech.glide:glide:4.11.0'
+    implementation 'com.google.android.material:material:1.0.0-rc01'
+
 
 }

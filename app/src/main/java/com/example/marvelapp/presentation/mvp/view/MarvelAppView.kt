@@ -38,4 +38,8 @@ class MarvelAppView(activity: Activity, private val binding: ActivityMainBinding
         MarvelDetailsFragment.newInstance(characterId)
             .show((context as FragmentActivity).supportFragmentManager, TAG)
     }
+
+    override fun cleanRecycler() {
+        binding.recycleView.removeAllViewsInLayout()
+    }
 }

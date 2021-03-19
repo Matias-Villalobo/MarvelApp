@@ -8,7 +8,6 @@ interface GetCharacterUseCase {
     fun call(): Observable<List<CharacterEntity>>
 }
 
-class GetCharactersUseCaseImpl constructor(private val marvelService: MarvelService) :
-    GetCharacterUseCase {
+class GetCharactersUseCaseImpl constructor(private val marvelService: MarvelService) : GetCharacterUseCase {
     override fun call(): Observable<List<CharacterEntity>> = marvelService.getCharacters()
 }
