@@ -1,7 +1,7 @@
 package com.example.marvelapp.domain.entity
 
-import com.example.marvelapp.data.local.model.utils.ConstantsUtils.EMPTY_STRING
-import com.example.marvelapp.data.local.model.utils.ConstantsUtils.VALUE_ZERO
+import com.example.marvelapp.domain.entity.utils.ConstantsUtils.EMPTY_STRING
+import com.example.marvelapp.domain.entity.utils.ConstantsUtils.VALUE_ZERO
 
 class ComicsEntity(
     val available: Int = VALUE_ZERO,
