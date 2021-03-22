@@ -21,5 +21,5 @@
     <dimen name="fab_margin_bottom">90dp</dimen>
     <dimen name="loading_bar_height">100dp</dimen>
     <dimen name="fab_margin_right">30dp</dimen>
-    <dimen name="fab_width">60dp</dimen>
+    <dimen name="fab_circumference_size">60dp</dimen>
 </resources>

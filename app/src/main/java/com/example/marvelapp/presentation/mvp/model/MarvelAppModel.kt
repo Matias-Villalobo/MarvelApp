@@ -17,9 +17,9 @@ class MarvelAppModel(
         getCharacterUseCases.call()
 
     override fun addCharactersToDataBase(data: List<CharacterEntity>) {
-        saveCharactersDataBaseUseCase.saveCharactersInLocal(data)
+        saveCharactersDataBaseUseCase.call(data)
     }
 
     override fun loadCharactersFromDataBase(): List<CharacterEntity> =
-        loadCharactersUseCase.getChractersFromLocal()
+        loadCharactersUseCase.call()
 }

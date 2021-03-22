@@ -17,7 +17,7 @@ import com.example.marvelapp.presentation.fragment.MarvelDetailsFragment.Compani
 class MarvelAppView(activity: Activity, private val binding: ActivityMainBinding) :
     ActivityView(activity), MarvelAppContract.MarvelAppView {
 
-    override fun showData(characterFiltered: List<CharacterEntity>) {
+    override fun showCharacters(characterFiltered: List<CharacterEntity>) {
         binding.recycleView.layoutManager = LinearLayoutManager(context)
         binding.recycleView.adapter = CharacterAdapter(characterFiltered, (activity as ItemClicked))
     }

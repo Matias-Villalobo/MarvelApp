@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity(), ItemClicked {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        floatingButton()
+        loadCharactersFromLocal()
 
         presenter = MarvelAppPresenter(
             MarvelAppModel(
@@ -37,9 +37,8 @@ class MainActivity : AppCompatActivity(), ItemClicked {
         presenter.fetchHeroes()
     }
 
-    private fun floatingButton() {
-        val button = binding.fab
-        button.setOnClickListener { presenter.getCharactersFromDataBase() }
+    private fun loadCharactersFromLocal() {
+        binding.fab.setOnClickListener { presenter.getCharactersFromDataBase() }
     }
 
     override fun characterClicked(characterId: Int) {

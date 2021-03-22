@@ -12,7 +12,7 @@ class LocalMarvelDatabaseImpl(private val mapper: CharacterRealmMapper) : LocalM
         val realmInstance = Realm.getDefaultInstance()
         realmInstance.executeTransaction {
             realmInstance.deleteAll()
-            var userRealm: List<CharacterRealmEntity> = mapper.transformEntityListToRealmList(data)
+            val userRealm: List<CharacterRealmEntity> = mapper.transformEntityListToRealmList(data)
             realmInstance.insert(userRealm)
         }
     }

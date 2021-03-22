@@ -7,6 +7,7 @@ import com.example.marvelapp.data.local.model.SeriesRealmEntity
 import com.example.marvelapp.data.local.model.StoriesRealmEntity
 import com.example.marvelapp.data.local.model.ThumbnailRealmEntity
 import com.example.marvelapp.data.local.model.UrlRealmEntity
+import com.example.marvelapp.data.local.model.utils.ConstantsUtils.EMPTY_STRING
 import com.example.marvelapp.domain.entity.CharacterEntity
 import com.example.marvelapp.domain.entity.ComicsEntity
 import com.example.marvelapp.domain.entity.EventsEntity
@@ -39,44 +40,69 @@ object CharacterRealmMapper {
             characterRealmEntity.name,
             characterRealmEntity.description,
             characterRealmEntity.modified,
-            transformDBThumbnailr(characterRealmEntity.thumbnail!!),
+            transformDBThumbnailr(characterRealmEntity.thumbnail),
             characterRealmEntity.resourceUri,
-            transformDBEventsr(characterRealmEntity.events!!),
-            transformDBComicsr(characterRealmEntity.comics!!),
-            transformDBStoriesr(characterRealmEntity.stories!!),
-            transformDBSeriesr(characterRealmEntity.series!!),
+            transformDBEventsr(characterRealmEntity.events),
+            transformDBComicsr(characterRealmEntity.comics),
+            transformDBStoriesr(characterRealmEntity.stories),
+            transformDBSeriesr(characterRealmEntity.series),
             transformToUrlList(characterRealmEntity.urls)
         )
 
-    private fun transformDBStoriesr(storiesRealmEntity: StoriesRealmEntity): StoriesEntity = StoriesEntity(
-        storiesRealmEntity.available,
-        storiesRealmEntity.collectionURI,
-        storiesRealmEntity.returned
-    )
+    private fun transformDBStoriesr(storiesRealmEntity: StoriesRealmEntity?): StoriesEntity {
+        storiesRealmEntity?.let {
+            return StoriesEntity(
+                storiesRealmEntity.available,
+                storiesRealmEntity.collectionURI,
+                storiesRealmEntity.returned
+            )
+        }
+        return StoriesEntity()
+    }
 
-    private fun transformDBThumbnailr(thumbnailRealmEntity: ThumbnailRealmEntity): ThumbnailEntity =
-        ThumbnailEntity(
-            thumbnailRealmEntity.path,
-            thumbnailRealmEntity.extension
-        )
+    private fun transformDBThumbnailr(thumbnailRealmEntity: ThumbnailRealmEntity?): ThumbnailEntity {
+        thumbnailRealmEntity?.let {
+            return ThumbnailEntity(
+                thumbnailRealmEntity.path,
+                thumbnailRealmEntity.extension
+            )
+        }
+        return ThumbnailEntity()
+    }
 
-    private fun transformDBComicsr(comicsRealmEntity: ComicsRealmEntity): ComicsEntity = ComicsEntity(
-        comicsRealmEntity.available,
-        comicsRealmEntity.collectionURI,
-        comicsRealmEntity.returned
-    )
+    private fun transformDBComicsr(comicsRealmEntity: ComicsRealmEntity?): ComicsEntity {
+        comicsRealmEntity?.let {
+            return ComicsEntity(
+                comicsRealmEntity.available,
+                comicsRealmEntity.collectionURI,
+                comicsRealmEntity.returned
+            )
+        }
+        return ComicsEntity()
+    }
 
-    private fun transformDBEventsr(eventsRealmEntity: EventsRealmEntity): EventsEntity = EventsEntity(
-        eventsRealmEntity.available,
-        eventsRealmEntity.collectionURI,
-        eventsRealmEntity.returned
-    )
 
-    private fun transformDBSeriesr(seriesRealmEntity: SeriesRealmEntity): SeriesEntity = SeriesEntity(
-        seriesRealmEntity.available,
-        seriesRealmEntity.collectionURI,
-        seriesRealmEntity.returned
-    )
+    private fun transformDBEventsr(eventsRealmEntity: EventsRealmEntity?): EventsEntity {
+        eventsRealmEntity?.let {
+            return EventsEntity(
+                eventsRealmEntity.available,
+                eventsRealmEntity.collectionURI,
+                eventsRealmEntity.returned
+            )
+        }
+        return EventsEntity()
+    }
+
+    private fun transformDBSeriesr(seriesRealmEntity: SeriesRealmEntity?): SeriesEntity {
+        seriesRealmEntity?.let {
+            return SeriesEntity(
+                seriesRealmEntity.available,
+                seriesRealmEntity.collectionURI,
+                seriesRealmEntity.returned
+            )
+        }
+        return SeriesEntity()
+    }
 
     fun transformDBListOfUrls(urlsEntity: List<UrlsEntity>): RealmList<UrlRealmEntity> {
         var list = urlsEntity.map { transformDBUrl(it) }

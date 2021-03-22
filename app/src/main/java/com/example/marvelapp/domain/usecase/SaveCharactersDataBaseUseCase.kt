@@ -4,13 +4,13 @@ import com.example.marvelapp.domain.entity.CharacterEntity
 import com.example.marvelapp.domain.local.LocalMarvelDataBase
 
 interface SaveCharactersDataBaseUseCase {
-    fun saveCharactersInLocal(data: List<CharacterEntity>)
+    fun call(characters: List<CharacterEntity>)
 }
 
 class SaveCharactersDataBaseUseCaseImpl(private val localMarvelDataBase: LocalMarvelDataBase) :
     SaveCharactersDataBaseUseCase {
 
-    override fun saveCharactersInLocal(data: List<CharacterEntity>) {
-        localMarvelDataBase.saveCharacters(data)
+    override fun call(characters: List<CharacterEntity>) {
+        localMarvelDataBase.saveCharacters(characters)
     }
 }
