@@ -18,5 +18,8 @@
     <dimen name="character_image_width_size">0dp</dimen>
     <dimen name="character_image_margin_top">10dp</dimen>
     <dimen name="loading_bar_widt">100dp</dimen>
+    <dimen name="fab_margin_bottom">90dp</dimen>
     <dimen name="loading_bar_height">100dp</dimen>
+    <dimen name="fab_margin_right">30dp</dimen>
+    <dimen name="fab_circumference_size">60dp</dimen>
 </resources>

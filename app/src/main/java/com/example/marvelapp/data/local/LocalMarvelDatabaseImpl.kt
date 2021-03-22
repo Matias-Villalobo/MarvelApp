@@ -8,13 +8,18 @@ import io.realm.Realm
 
 class LocalMarvelDatabaseImpl(private val mapper: CharacterRealmMapper) : LocalMarvelDataBase {
 
-    override fun saveCharacters(data: List<CharacterEntity>) {
-        var realmInstance = Realm.getDefaultInstance()
-
+    override fun saveCharacters(characters: List<CharacterEntity>) {
+        val realmInstance = Realm.getDefaultInstance()
         realmInstance.executeTransaction {
             realmInstance.deleteAll()
-            var userRealm: List<CharacterRealmEntity> = mapper.transformDBListOfCharacters(data)
+            val userRealm: List<CharacterRealmEntity> = mapper.transformEntityListToRealmList(characters)
             realmInstance.insert(userRealm)
         }
+    }
+
+    override fun loadCharacters(): List<CharacterEntity> {
+        val realm = Realm.getDefaultInstance()
+        val charactersRealm = realm.where(CharacterRealmEntity::class.java).findAll()
+        return mapper.transformRealmListToEntityList(charactersRealm)
     }
 }

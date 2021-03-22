@@ -1,6 +1,8 @@
 package com.example.marvelapp.domain.entity
 
+import com.example.marvelapp.domain.entity.utils.ConstantsUtils.EMPTY_STRING
+
 class ThumbnailEntity(
-    val path: String,
-    val extension: String
+    val path: String = EMPTY_STRING,
+    val extension: String = EMPTY_STRING
 )

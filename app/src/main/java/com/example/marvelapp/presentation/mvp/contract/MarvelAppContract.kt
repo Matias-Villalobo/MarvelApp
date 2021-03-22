@@ -7,19 +7,22 @@ interface MarvelAppContract {
 
     interface MarvelAppModel {
         fun getHeroesData(): Observable<List<CharacterEntity>>
-        fun addHeroesToDataBase(data: List<CharacterEntity>)
+        fun addCharactersToDataBase(data: List<CharacterEntity>)
+        fun loadCharactersFromDataBase():List<CharacterEntity>
     }
 
     interface MarvelAppView {
-        fun showData(data: List<CharacterEntity>)
+        fun showCharacters(data: List<CharacterEntity>)
         fun showError()
         fun showLoading()
         fun hideLoading()
         fun showCharacterInfo(characterId: Int)
+        fun cleanRecycler()
     }
 
     interface MarvelAppPresenter {
         fun fetchHeroes()
         fun onCharacterClicked(characterId: Int)
+        fun getCharactersFromDataBase()
     }
 }

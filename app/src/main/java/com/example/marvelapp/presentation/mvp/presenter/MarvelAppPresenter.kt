@@ -15,9 +15,9 @@ class MarvelAppPresenter(
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe(
-                { data ->
-                    model.addHeroesToDataBase(data)
-                    view.showData(data)
+                { characters ->
+                    model.addCharactersToDataBase(characters)
+                    view.showCharacters(characters)
                     view.hideLoading()
                 },
                 {
@@ -30,4 +30,12 @@ class MarvelAppPresenter(
         view.showCharacterInfo(characterId)
     }
 
+    override fun getCharactersFromDataBase() {
+        view.cleanRecycler()
+        view.showLoading()
+        model.loadCharactersFromDataBase().apply {
+            view.showCharacters(this)
+            view.hideLoading()
+        }
+    }
 }
