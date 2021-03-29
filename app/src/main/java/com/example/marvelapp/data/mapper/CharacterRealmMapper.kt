@@ -7,20 +7,18 @@ import com.example.marvelapp.data.local.model.SeriesRealmEntity
 import com.example.marvelapp.data.local.model.StoriesRealmEntity
 import com.example.marvelapp.data.local.model.ThumbnailRealmEntity
 import com.example.marvelapp.data.local.model.UrlRealmEntity
-import com.example.marvelapp.data.local.model.utils.ConstantsUtils.EMPTY_STRING
 import com.example.marvelapp.domain.entity.CharacterEntity
 import com.example.marvelapp.domain.entity.ComicsEntity
 import com.example.marvelapp.domain.entity.EventsEntity
 import com.example.marvelapp.domain.entity.SeriesEntity
 import com.example.marvelapp.domain.entity.StoriesEntity
 import com.example.marvelapp.domain.entity.ThumbnailEntity
-import com.example.marvelapp.domain.entity.UrlsEntity
+import com.example.marvelapp.domain.entity.UrlEntity
 import io.realm.RealmList
-import io.realm.RealmResults
 
 object CharacterRealmMapper {
 
-    private fun transformDBCharacter(characterEntity: CharacterEntity): CharacterRealmEntity = CharacterRealmEntity(
+    fun transformDBCharacter(characterEntity: CharacterEntity): CharacterRealmEntity = CharacterRealmEntity(
         characterEntity.id,
         characterEntity.name,
         characterEntity.description,
@@ -34,7 +32,7 @@ object CharacterRealmMapper {
         transformDBListOfUrls(characterEntity.urls)
     )
 
-    private fun transformCharacterEntityToRealm(characterRealmEntity: CharacterRealmEntity): CharacterEntity =
+    fun transformCharacterRealmToEntity(characterRealmEntity: CharacterRealmEntity): CharacterEntity =
         CharacterEntity(
             characterRealmEntity.id,
             characterRealmEntity.name,
@@ -104,24 +102,24 @@ object CharacterRealmMapper {
         return SeriesEntity()
     }
 
-    fun transformDBListOfUrls(urlsEntity: List<UrlsEntity>): RealmList<UrlRealmEntity> {
-        var list = urlsEntity.map { transformDBUrl(it) }
+    fun transformDBListOfUrls(urlEntity: List<UrlEntity>): RealmList<UrlRealmEntity> {
+        var list = urlEntity.map { transformDBUrl(it) }
         var auxRealmList = RealmList<UrlRealmEntity>()
         list.forEach { auxRealmList.add(it) }
         return auxRealmList
     }
 
-    private fun transformToUrlList(urlRealmEntity: List<UrlRealmEntity>): List<UrlsEntity> =
+    fun transformToUrlList(urlRealmEntity: List<UrlRealmEntity>): List<UrlEntity> =
         urlRealmEntity.map { transformRealmToEntity(it) }
 
-    private fun transformRealmToEntity(urlRealmEntity: UrlRealmEntity): UrlsEntity = UrlsEntity(
+    fun transformRealmToEntity(urlRealmEntity: UrlRealmEntity): UrlEntity = UrlEntity(
         urlRealmEntity.type,
         urlRealmEntity.url
     )
 
-    private fun transformDBUrl(urlsEntity: UrlsEntity): UrlRealmEntity = UrlRealmEntity(
-        urlsEntity.type,
-        urlsEntity.url
+    fun transformDBUrl(urlEntity: UrlEntity): UrlRealmEntity = UrlRealmEntity(
+        urlEntity.type,
+        urlEntity.url
     )
 
     private fun transformDBStories(storiesEntity: StoriesEntity): StoriesRealmEntity = StoriesRealmEntity(
@@ -158,5 +156,5 @@ object CharacterRealmMapper {
         charactersList.map { transformDBCharacter(it) }
 
     fun transformRealmListToEntityList(charactersList: List<CharacterRealmEntity>): List<CharacterEntity> =
-        charactersList.map { transformCharacterEntityToRealm(it) }
+        charactersList.map { transformCharacterRealmToEntity(it) }
 }

@@ -1,7 +1,6 @@
 package com.example.marvelapp.presentation.mvp.presenter
 
 import com.example.marvelapp.domain.entity.CharacterDetailEntity
-import com.example.marvelapp.domain.entity.CharacterEntity
 import com.example.marvelapp.presentation.mvp.model.MarvelDetailModel
 import com.example.marvelapp.presentation.mvp.view.MarvelDetailView
 import com.nhaarman.mockitokotlin2.mock
@@ -38,6 +37,7 @@ class CharacterDetailPresenterTest {
         verify(view).showFragmentData(characters)
         verify(view).hideLoading()
     }
+
     @Test
     fun `when an item is pressed, do not retrieve info`() {
         whenever(model.getDataSingleCharacter(characterID)).thenReturn(Observable.error(Throwable()))
@@ -76,5 +76,3 @@ class CharacterDetailPresenterTest {
         }
     }
 }
-
-

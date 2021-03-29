@@ -20,7 +20,6 @@ import org.junit.Test
 import org.mockito.Mockito.mock
 
 class CharacterPresenterTest {
-
     private val marvelAppModel = mock(MarvelAppContract.MarvelAppModel::class.java)
     private val view = mock(MarvelAppContract.MarvelAppView::class.java)
     private lateinit var marvelAppPresenter: MarvelAppContract.MarvelAppPresenter

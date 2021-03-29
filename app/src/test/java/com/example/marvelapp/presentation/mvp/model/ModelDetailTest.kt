@@ -15,8 +15,8 @@ class ModelDetailTest {
     @Before
     fun setup() {
         model = MarvelDetailModel(getSingleCharacterUseCase)
-
     }
+
     @Test
     fun `get single character data`() {
         model.getDataSingleCharacter(characterID)
