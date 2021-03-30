@@ -11,10 +11,15 @@ import org.junit.Test
 class SaveCharacterDataBaseUseCase {
     private var localMarvelDataBase: LocalMarvelDataBase = mock()
     private var characters: List<CharacterEntity> = mock()
+    private lateinit var saveCharacterServiceUseCase : SaveCharactersDataBaseUseCaseImpl
+
+    @Before
+    fun setUp() {
+        saveCharacterServiceUseCase = SaveCharactersDataBaseUseCaseImpl(localMarvelDataBase)
+    }
 
     @Test
     fun `verify save character is call`() {
-        val saveCharacterServiceUseCase = SaveCharactersDataBaseUseCaseImpl(localMarvelDataBase)
         saveCharacterServiceUseCase.call(characters)
         verify(localMarvelDataBase).saveCharacters(characters)
     }

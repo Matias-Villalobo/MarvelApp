@@ -13,16 +13,17 @@ import org.junit.Test
 class GetSingleCharacterUseCaseTest {
     private var marvelService: MarvelService = mock()
     private var characters: CharacterDetailEntity = mock()
+    private lateinit var getCharacterServiceUseCase : GetSingleCharacterUseCaseImpl
 
     @Before
     fun setUp() {
-        whenever(marvelService.getSingleCharacter(ID)).thenReturn(Observable.just(characters))
+      getCharacterServiceUseCase= GetSingleCharacterUseCaseImpl(marvelService)
     }
 
     @Test
     fun call() {
-        val getCharacterServiceUseCase = GetSingleCharacterUseCaseImpl(marvelService)
         getCharacterServiceUseCase.call(ID)
+        whenever(marvelService.getSingleCharacter(ID)).thenReturn(Observable.just(characters))
         verify(marvelService).getSingleCharacter(ID)
     }
 }

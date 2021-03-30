@@ -14,6 +14,7 @@ import com.example.marvelapp.data.service.response.SeriesResponse
 import com.example.marvelapp.data.service.response.StoriesResponse
 import com.example.marvelapp.data.service.response.ThumbnailResponse
 import com.example.marvelapp.data.service.response.UrlResponse
+import com.example.marvelapp.domain.entity.CharacterDetailEntity
 import com.example.marvelapp.domain.entity.CharacterEntity
 import com.example.marvelapp.domain.entity.ComicsEntity
 import com.example.marvelapp.domain.entity.EventsEntity
@@ -61,6 +62,10 @@ object CharactersConstantsUtils {
     val CHARACTER_ENTITY = CharacterEntity(
         ID, NAME, DESCRIPTION, MODIFIED, THUMBNAIL_ENTITY, RESOURCEURI,
         EVENTS_ENTITY, COMICS_ENTITY, STORIES_ENTITY, SERIES_ENTITY, URL_LIST_ENTITY
+    )
+    val CHARACTER_DETAIL_ENTITY = CharacterDetailEntity(
+        ID, NAME, DESCRIPTION, MODIFIED, THUMBNAIL_ENTITY, RESOURCEURI,
+        COMICS_ENTITY, EVENTS_ENTITY, STORIES_ENTITY, SERIES_ENTITY, URL_LIST_ENTITY
     )
     val CHARACTER_REALM_ENTITY = CharacterRealmEntity(
         ID, NAME, DESCRIPTION, MODIFIED, THUMBNAIL_REALM_ENTITY, RESOURCEURI, COMICS_REALM_ENTITY,

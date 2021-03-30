@@ -1,6 +1,6 @@
 package com.example.marvelapp.domain.entity
 
-class CharacterDetailEntity(
+data class CharacterDetailEntity(
     val id: Int,
     val name: String,
     val description: String,
