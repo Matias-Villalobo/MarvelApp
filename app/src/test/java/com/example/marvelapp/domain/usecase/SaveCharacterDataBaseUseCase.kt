@@ -12,13 +12,8 @@ class SaveCharacterDataBaseUseCase {
     private var localMarvelDataBase: LocalMarvelDataBase = mock()
     private var characters: List<CharacterEntity> = mock()
 
-    @Before
-    fun setUp() {
-        whenever(localMarvelDataBase.saveCharacters(characters)).then {}
-    }
-
     @Test
-    fun call() {
+    fun `verify save character is call`() {
         val saveCharacterServiceUseCase = SaveCharactersDataBaseUseCaseImpl(localMarvelDataBase)
         saveCharacterServiceUseCase.call(characters)
         verify(localMarvelDataBase).saveCharacters(characters)

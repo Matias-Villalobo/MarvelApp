@@ -2,8 +2,8 @@ package com.example.marvelapp.presentation.mvp.presenter
 
 import com.example.marvelapp.domain.entity.CharacterEntity
 import com.example.marvelapp.presentation.mvp.contract.MarvelAppContract
-import com.example.marvelapp.presentation.mvp.utils.ConstantsUtils.characterID
-import com.example.marvelapp.presentation.mvp.utils.ConstantsUtils.numberZero
+import com.example.marvelapp.utils.CharactersConstantsUtils.ID
+import com.example.marvelapp.utils.CharactersConstantsUtils.ZERO_VALUE
 import com.nhaarman.mockitokotlin2.mock
 import com.nhaarman.mockitokotlin2.verify
 import com.nhaarman.mockitokotlin2.whenever
@@ -52,8 +52,8 @@ class CharacterPresenterTest {
 
     @Test
     fun `when a character card is pressed, show details in a fragment`() {
-        marvelAppPresenter.onCharacterClicked(characterID)
-        verify(view).showCharacterInfo(characterID)
+        marvelAppPresenter.onCharacterClicked(ID)
+        verify(view).showCharacterInfo(ID)
     }
 
     @Test
@@ -77,7 +77,7 @@ class CharacterPresenterTest {
                     delay: Long,
                     unit: TimeUnit
                 ): Disposable {
-                    return super.scheduleDirect(run, numberZero.toLong(), unit)
+                    return super.scheduleDirect(run, ZERO_VALUE.toLong(), unit)
                 }
 
                 override fun createWorker(): Worker {

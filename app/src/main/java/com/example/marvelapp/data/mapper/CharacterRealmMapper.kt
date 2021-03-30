@@ -79,7 +79,6 @@ object CharacterRealmMapper {
         return ComicsEntity()
     }
 
-
     private fun transformDBEventsr(eventsRealmEntity: EventsRealmEntity?): EventsEntity {
         eventsRealmEntity?.let {
             return EventsEntity(
@@ -102,22 +101,22 @@ object CharacterRealmMapper {
         return SeriesEntity()
     }
 
-    fun transformDBListOfUrls(urlEntity: List<UrlEntity>): RealmList<UrlRealmEntity> {
+    private fun transformDBListOfUrls(urlEntity: List<UrlEntity>): RealmList<UrlRealmEntity> {
         var list = urlEntity.map { transformDBUrl(it) }
         var auxRealmList = RealmList<UrlRealmEntity>()
         list.forEach { auxRealmList.add(it) }
         return auxRealmList
     }
 
-    fun transformToUrlList(urlRealmEntity: List<UrlRealmEntity>): List<UrlEntity> =
+    private fun transformToUrlList(urlRealmEntity: List<UrlRealmEntity>): List<UrlEntity> =
         urlRealmEntity.map { transformRealmToEntity(it) }
 
-    fun transformRealmToEntity(urlRealmEntity: UrlRealmEntity): UrlEntity = UrlEntity(
+    private fun transformRealmToEntity(urlRealmEntity: UrlRealmEntity): UrlEntity = UrlEntity(
         urlRealmEntity.type,
         urlRealmEntity.url
     )
 
-    fun transformDBUrl(urlEntity: UrlEntity): UrlRealmEntity = UrlRealmEntity(
+    private fun transformDBUrl(urlEntity: UrlEntity): UrlRealmEntity = UrlRealmEntity(
         urlEntity.type,
         urlEntity.url
     )

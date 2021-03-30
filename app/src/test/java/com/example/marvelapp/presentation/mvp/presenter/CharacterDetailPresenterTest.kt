@@ -3,6 +3,8 @@ package com.example.marvelapp.presentation.mvp.presenter
 import com.example.marvelapp.domain.entity.CharacterDetailEntity
 import com.example.marvelapp.presentation.mvp.model.MarvelDetailModel
 import com.example.marvelapp.presentation.mvp.view.MarvelDetailView
+import com.example.marvelapp.utils.CharactersConstantsUtils.ID
+import com.example.marvelapp.utils.CharactersConstantsUtils.ZERO_VALUE
 import com.nhaarman.mockitokotlin2.mock
 import com.nhaarman.mockitokotlin2.verify
 import com.nhaarman.mockitokotlin2.whenever
@@ -30,28 +32,25 @@ class CharacterDetailPresenterTest {
 
     @Test
     fun `when an item is pressed, retrieve info`() {
-        whenever(model.getDataSingleCharacter(characterID)).thenReturn(Observable.just(characters))
-        presenter.retrieveSingleCharacterInfo(characterID)
+        whenever(model.getDataSingleCharacter(ID)).thenReturn(Observable.just(characters))
+        presenter.retrieveSingleCharacterInfo(ID)
         verify(view).showLoading()
-        verify(model).getDataSingleCharacter(characterID)
+        verify(model).getDataSingleCharacter(ID)
         verify(view).showFragmentData(characters)
         verify(view).hideLoading()
     }
 
     @Test
     fun `when an item is pressed, do not retrieve info`() {
-        whenever(model.getDataSingleCharacter(characterID)).thenReturn(Observable.error(Throwable()))
-        presenter.retrieveSingleCharacterInfo(characterID)
+        whenever(model.getDataSingleCharacter(ID)).thenReturn(Observable.error(Throwable()))
+        presenter.retrieveSingleCharacterInfo(ID)
         verify(view).showLoading()
-        verify(model).getDataSingleCharacter(characterID)
+        verify(model).getDataSingleCharacter(ID)
         verify(view).showFragmentError()
         verify(view).hideLoading()
     }
 
     companion object {
-        private const val characterID = 1234
-        private const val numberZero = 0
-
         @BeforeClass
         @JvmStatic
         fun setUpClass() {
@@ -61,7 +60,7 @@ class CharacterDetailPresenterTest {
                     delay: Long,
                     unit: TimeUnit
                 ): Disposable {
-                    return super.scheduleDirect(run, numberZero.toLong(), unit)
+                    return super.scheduleDirect(run, ZERO_VALUE.toLong(), unit)
                 }
 
                 override fun createWorker(): Worker {
