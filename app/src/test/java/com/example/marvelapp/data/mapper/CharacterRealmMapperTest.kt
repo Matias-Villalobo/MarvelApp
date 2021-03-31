@@ -22,25 +22,6 @@ class CharacterRealmMapperTest {
 
     @Test
     fun transformWhenValidValuesTest() {
-        assertForValidValuesEntityToRealm()
-    }
-
-    @Test
-    fun transformToResponseTest() {
-        assertForValidValuesRealmToEntity()
-    }
-
-    @Test
-    fun transformEntityListToRealmListTest() {
-        assertEquals(ZERO_VALUE, CharacterRealmMapper.transformEntityListToRealmList(emptyList()).size)
-    }
-
-    @Test
-    fun transformRealmListToEntityListTest() {
-        assertEquals(ZERO_VALUE, CharacterRealmMapper.transformRealmListToEntityList(emptyList()).size)
-    }
-
-    private fun assertForValidValuesEntityToRealm() {
         val character = CharacterRealmMapper.transformDBCharacter(CHARACTER_ENTITY)
         assertEquals(ID, character.id)
         assertEquals(NAME, character.name)
@@ -66,7 +47,8 @@ class CharacterRealmMapperTest {
         assertEquals(URL_REALM_LIST_ENTITY[ZERO_VALUE]?.url, character.urls[ZERO_VALUE]?.url)
     }
 
-    private fun assertForValidValuesRealmToEntity() {
+    @Test
+    fun transformToResponseTest() {
         val actual = CharacterRealmMapper.transformCharacterRealmToEntity(CHARACTER_REALM_ENTITY)
         assertEquals(ID, actual.id)
         assertEquals(NAME, actual.name)
@@ -90,5 +72,15 @@ class CharacterRealmMapperTest {
         assertEquals(RETURNED, actual.comics.returned)
         assertEquals(URL_LIST_ENTITY[ZERO_VALUE].type, actual.urls[ZERO_VALUE].type)
         assertEquals(URL_LIST_ENTITY[ZERO_VALUE].url, actual.urls[ZERO_VALUE].url)
+    }
+
+    @Test
+    fun transformEntityListToRealmListTest() {
+        assertEquals(ZERO_VALUE, CharacterRealmMapper.transformEntityListToRealmList(emptyList()).size)
+    }
+
+    @Test
+    fun transformRealmListToEntityListTest() {
+        assertEquals(ZERO_VALUE, CharacterRealmMapper.transformRealmListToEntityList(emptyList()).size)
     }
 }
