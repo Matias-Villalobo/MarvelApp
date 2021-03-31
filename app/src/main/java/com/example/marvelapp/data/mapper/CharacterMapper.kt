@@ -14,11 +14,11 @@ import com.example.marvelapp.domain.entity.EventsEntity
 import com.example.marvelapp.domain.entity.SeriesEntity
 import com.example.marvelapp.domain.entity.StoriesEntity
 import com.example.marvelapp.domain.entity.ThumbnailEntity
-import com.example.marvelapp.domain.entity.UrlsEntity
+import com.example.marvelapp.domain.entity.UrlEntity
 
 object CharacterMapper {
 
-    private fun transformCharacter(characterResponse: CharacterResponse): CharacterEntity =
+     fun transformCharacter(characterResponse: CharacterResponse): CharacterEntity =
         CharacterEntity(
             characterResponse.id,
             characterResponse.name,
@@ -48,12 +48,12 @@ object CharacterMapper {
             transformListOfUrls(character.urls)
         )
 
-    private fun transformUrl(urlResponse: UrlResponse): UrlsEntity = UrlsEntity(
+    private fun transformUrl(urlResponse: UrlResponse): UrlEntity = UrlEntity(
         urlResponse.type,
         urlResponse.url
     )
 
-    fun transformListOfUrls(urlResponse: List<UrlResponse>): List<UrlsEntity> =
+    fun transformListOfUrls(urlResponse: List<UrlResponse>): List<UrlEntity> =
         urlResponse.map { transformUrl(it) }
 
     private fun transformThumbnail(thumbnailResponse: ThumbnailResponse): ThumbnailEntity =
@@ -68,12 +68,6 @@ object CharacterMapper {
         comicsResponse.returned
     )
 
-    private fun transformStories(storiesResponse: StoriesResponse): StoriesEntity = StoriesEntity(
-        storiesResponse.available,
-        storiesResponse.collectionURI,
-        storiesResponse.returned
-    )
-
     private fun transformEvents(eventsResponse: EventsResponse): EventsEntity = EventsEntity(
         eventsResponse.available,
         eventsResponse.collectionURI,
@@ -86,8 +80,12 @@ object CharacterMapper {
         seriesResponse.returned
     )
 
+    private fun transformStories(storiesResponse: StoriesResponse): StoriesEntity = StoriesEntity(
+        storiesResponse.available,
+        storiesResponse.collectionURI,
+        storiesResponse.returned
+    )
 
     fun transformListOfCharacters(charactersResponse: List<CharacterResponse>): List<CharacterEntity> =
         charactersResponse.map { transformCharacter(it) }
-
 }
